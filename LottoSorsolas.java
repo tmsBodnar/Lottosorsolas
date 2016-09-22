@@ -16,12 +16,14 @@ public class LottoSorsolas {
 
     public static int tipp(){
         Scanner sc = new Scanner(System.in);
-        int tipp = sc.nextInt();
-        System.out.print("");
+        int tipp;
+        do{
+        tipp = sc.nextInt();
         if(tipp <= 0 || tipp > 35){
             System.out.print("Rossz tipp! Adjon újat!");
-            tipp = sc.nextInt();
         }
+        }while (!( tipp > 0 && tipp < 35));
+        System.out.print("");
         return tipp;
     }
     
@@ -84,7 +86,7 @@ public class LottoSorsolas {
             tippek[x]= jatekos;
             x++;
         }else{
-            System.out.println("Rossz tipp, újat kérek!");
+            System.out.println("Rossz tipp, adjon újat!");
         }
             
         }while( x < 7 );
